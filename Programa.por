@@ -1,6 +1,6 @@
-programa{
+programa {
 
-  // Variáveis de controle de navegação
+    // Variáveis de controle de navegação
 		inteiro opcao_menu_principal = -1
 		inteiro opcao_crud = -1
 		inteiro opcao_pagamento = 0
@@ -24,32 +24,8 @@ programa{
 		real valor_final = 0.0
 
 
-	funcao inicio(){
-		
-
-		// 1. LAÇO PRINCIPAL DO SISTEMA
-		enquanto (opcao_menu_principal != 0)
-		{
-			// Limpa a tela a cada iteração para manter o menu organizado
-			limpa()
-
-			escreva("=== BEM-VINDO À NOSSA LOJA VIRTUAL ===\n")
-			escreva("----------------------------------------\n")
-			escreva("MENU PRINCIPAL\n")
-			escreva("1. Ver Produtos e Adicionar ao Carrinho (CREATE)\n")
-			escreva("2. Ver Meus Itens no Carrinho (READ)\n")
-			escreva("3. Alterar Quantidade no Carrinho (UPDATE)\n")
-			escreva("4. Remover Item do Carrinho (DELETE)\n")
-			escreva("0. Finalizar Compra e Ir ao Pagamento\n")
-			escreva("Escolha uma opção: ")
-			leia(opcao_menu_principal)
-
-			escolha (opcao_menu_principal)
-			{
-				// ====================================================
-				// C - CREATE (Adicionar Itens ao Carrinho)
-				// ====================================================
-				caso 1:
+   funcao adicionar_produto()	{
+    				caso 1:
 					limpa()
 					escreva("--- CATÁLOGO DE PRODUTOS ---\n")
 					escreva("1. Camisa Esportiva (Estoque: ", estoque_prod1, ") - R$ ", preco_prod1, "\n")
@@ -98,6 +74,32 @@ programa{
 					escreva("\nPressione ENTER para voltar ao menu...")
 					leia(tecla_pausa)
 					pare
+
+   }
+	 funcao inicio()	{
+		
+		// 1. LAÇO PRINCIPAL DO SISTEMA
+		enquanto (opcao_menu_principal != 0)
+		{
+			// Limpa a tela a cada iteração para manter o menu organizado
+			limpa()
+
+			escreva("=== BEM-VINDO À NOSSA LOJA VIRTUAL ===\n")
+			escreva("----------------------------------------\n")
+			escreva("MENU PRINCIPAL\n")
+			escreva("1. Ver Produtos e Adicionar ao Carrinho (CREATE)\n")
+			escreva("2. Ver Meus Itens no Carrinho (READ)\n")
+			escreva("3. Alterar Quantidade no Carrinho (UPDATE)\n")
+			escreva("4. Remover Item do Carrinho (DELETE)\n")
+			escreva("0. Finalizar Compra e Ir ao Pagamento\n")
+			escreva("Escolha uma opção: ")
+			leia(opcao_menu_principal)
+
+			escolha (opcao_menu_principal) {
+				// ====================================================
+				// C - CREATE (Adicionar Itens ao Carrinho)
+				// ====================================================
+
 
 				// ====================================================
 				// R - READ (Visualizar o Carrinho)
