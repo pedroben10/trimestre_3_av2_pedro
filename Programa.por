@@ -1,6 +1,6 @@
 programa {
-    
-// Variáveis de controle de navegação
+
+  // Variáveis de controle de navegação
 		inteiro opcao_menu_principal = -1
 		inteiro opcao_crud = -1
 		inteiro opcao_pagamento = 0
@@ -24,20 +24,12 @@ programa {
 		real valor_final = 0.0
 
   funcao adicionar_produto(){
-
-    escolha (opcao_menu_principal){
-
-				// ====================================================
-				// C - CREATE (Adicionar Itens ao Carrinho)
-				// ====================================================
-       caso 1:
-					limpa()
 					escreva("--- CATÁLOGO DE PRODUTOS ---\n")
 					escreva("1. Camisa Esportiva (Estoque: ", estoque_prod1, ") - R$ ", preco_prod1, "\n")
 					escreva("2. Boné Casual      (Estoque: ", estoque_prod2, ") - R$ ", preco_prod2, "\n")
 					escreva("3. Tênis de Corrida (Estoque: ", estoque_prod3, ") - R$ ", preco_prod3, "\n")
 					escreva("Escolha o produto que deseja adicionar: ")
-					leia(opcao_crud)
+					leia(opcao_crud) 
 
 					escreva("Digite a quantidade desejada: ")
 					leia(quantidade_temp)
@@ -78,12 +70,11 @@ programa {
 					
 					escreva("\nPressione ENTER para voltar ao menu...")
 					leia(tecla_pausa)
-					pare
-    }
-  }
 
+  }
 	funcao inicio() {
-		
+
+		adicionar_produto()
 
 		// 1. LAÇO PRINCIPAL DO SISTEMA
 		enquanto (opcao_menu_principal != 0)
@@ -102,8 +93,7 @@ programa {
 			escreva("Escolha uma opção: ")
 			leia(opcao_menu_principal)
 
-			escolha (opcao_menu_principal){
-
+			escolha (opcao_menu_principal) {
 				// ====================================================
 				// C - CREATE (Adicionar Itens ao Carrinho)
 				// ====================================================
@@ -360,5 +350,5 @@ programa {
 		{
 			escreva("Carrinho vazio. Compra cancelada.\n")
 		}
-  }
+	}
 }
