@@ -98,45 +98,9 @@ programa {
 					leia(tecla_pausa)
 
    }
-	 funcao inicio()	{
-		
-		// 1. LAÇO PRINCIPAL DO SISTEMA
-		enquanto (opcao_menu_principal != 0)
-		{
-			// Limpa a tela a cada iteração para manter o menu organizado
-			limpa()
 
-			escreva("=== BEM-VINDO À NOSSA LOJA VIRTUAL ===\n")
-			escreva("----------------------------------------\n")
-			escreva("MENU PRINCIPAL\n")
-			escreva("1. Ver Produtos e Adicionar ao Carrinho (CREATE)\n")
-			escreva("2. Ver Meus Itens no Carrinho (READ)\n")
-			escreva("3. Alterar Quantidade no Carrinho (UPDATE)\n")
-			escreva("4. Remover Item do Carrinho (DELETE)\n")
-			escreva("0. Finalizar Compra e Ir ao Pagamento\n")
-			escreva("Escolha uma opção: ")
-			leia(opcao_menu_principal)
-
-			escolha (opcao_menu_principal) {
-				// ====================================================
-				// C - CREATE (Adicionar Itens ao Carrinho)
-				// ====================================================
-				caso 1:
-					 adicionar_produto()
-					pare
-
-				// ====================================================
-				// R - READ (Visualizar o Carrinho)
-				// ====================================================
-				caso 2:
-					ver_carrinho()
-					pare
-
-				// ====================================================
-				// U - UPDATE (Atualizar Quantidade no Carrinho)
-				// ====================================================
-				caso 3:
-					limpa()
+   funcao alterar_quantidade(){
+    limpa()
 					escreva("--- ALTERAR QUANTIDADE NO CARRINHO ---\n")
 					escreva("1. Camisa Esportiva (No carrinho: ", qtd_carrinho_prod1, ")\n")
 					escreva("2. Boné Casual      (No carrinho: ", qtd_carrinho_prod2, ")\n")
@@ -195,6 +159,49 @@ programa {
 					
 					escreva("\nPressione ENTER para voltar ao menu...")
 					leia(tecla_pausa)
+   }
+
+   
+
+	 funcao inicio()	{
+		
+		// 1. LAÇO PRINCIPAL DO SISTEMA
+		enquanto (opcao_menu_principal != 0)
+		{
+			// Limpa a tela a cada iteração para manter o menu organizado
+			limpa()
+
+			escreva("=== BEM-VINDO À NOSSA LOJA VIRTUAL ===\n")
+			escreva("----------------------------------------\n")
+			escreva("MENU PRINCIPAL\n")
+			escreva("1. Ver Produtos e Adicionar ao Carrinho (CREATE)\n")
+			escreva("2. Ver Meus Itens no Carrinho (READ)\n")
+			escreva("3. Alterar Quantidade no Carrinho (UPDATE)\n")
+			escreva("4. Remover Item do Carrinho (DELETE)\n")
+			escreva("0. Finalizar Compra e Ir ao Pagamento\n")
+			escreva("Escolha uma opção: ")
+			leia(opcao_menu_principal)
+
+			escolha (opcao_menu_principal) {
+				// ====================================================
+				// C - CREATE (Adicionar Itens ao Carrinho)
+				// ====================================================
+				caso 1:
+					 adicionar_produto()
+					pare
+
+				// ====================================================
+				// R - READ (Visualizar o Carrinho)
+				// ====================================================
+				caso 2:
+					ver_carrinho()
+					pare
+
+				// ====================================================
+				// U - UPDATE (Atualizar Quantidade no Carrinho)
+				// ====================================================
+				caso 3:
+					alterar_quantidade()
 					pare
 
 				// ====================================================
